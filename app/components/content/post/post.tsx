@@ -1,4 +1,4 @@
-import { headers } from "next/headers"
+import Image from 'next/image';
 
 export const Post = ({ header = "", pic = "" }) => {
     return (
@@ -16,7 +16,10 @@ export const Post = ({ header = "", pic = "" }) => {
                 <li><a href="#" className="icon brands fa-facebook-f">128</a></li>
             </ul>
         </div>
-        <a href="#" className="image featured"><img src={pic} alt="" /></a>
+        <a href="#" className="image featured">
+            <Image src={pic} alt={header} width={500} height={500} />
+      </a>
+        
         <p>
             <strong>Hello!</strong> You're looking at <strong>Striped</strong>, a fully responsive HTML5 site template designed by <a href="http://twitter.com/ajlkn">AJ</a>
             for <a href="http://html5up.net">HTML5 UP</a> It features a clean, minimalistic design, styling for all basic page elements (including blockquotes, tables and lists), a

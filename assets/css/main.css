@@ -1754,7 +1754,7 @@ input, select, textarea {
 			display: block;
 			width: 100%;
 			margin: 0 0 2em 0;
-		}
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);}
 
 		.image.left {
 			float: left;
@@ -2498,21 +2498,21 @@ input, select, textarea {
 
 			#logo {
 				font-family: 'Open Sans Condensed', sans-serif;
-				font-weight: 700;
+				font-weight: 600;
 				font-size: 2em;
-				letter-spacing: 0.1em;
+				letter-spacing: 0.15em;
 			}
 
 				#logo a {
 					display: block;
-					background-color: #c94663;
+					background-color: #03b8d8;
 					background-image: url("images/bg01.png");
 					padding: 0.875em 0.25em;
-					border-radius: 0.2em;
+					border-radius: 0.4em;
 					text-align: center;
 					box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.15), 0 0.025em 0.15em 0em rgba(0, 0, 0, 0.25);
 					text-decoration: none;
-					color: #fff;
+					color: #ffffff;
 				}
 
 		/* Content */

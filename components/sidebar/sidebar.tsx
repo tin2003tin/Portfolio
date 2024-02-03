@@ -1,18 +1,43 @@
+"use client"
+import { SetStateAction, useState } from "react";
 import { Calendar } from "./calendar/calendar"
+import Link from "next/link";
+
 
 
 export const SideBar = () => {
+	const [activeLink, setActiveLink] = useState('/');
+
+	const changePage = (link: SetStateAction<string>) => {
+		setActiveLink(link);
+	  };
     return (
         <div id="sidebar">
             {/* Logo */}
-            <h1 id="logo"><a href="#">STRIPED</a></h1>
+            <h1 id="logo"><a href="#">Portfolio</a></h1>
             {/* Nav */}
             <nav id="nav">
 				<ul>
-                    <li className="current"><a href="#">Latest Post</a></li>
-					<li><a href="#">Archives</a></li>
-                    <li><a href="#">About Me</a></li>
-                    <li><a href="#">Contact Me</a></li>
+				<li className={activeLink === '/' ? 'current' : ''}>
+            <Link href="/" onClick={() => changePage('/')}>
+              Lastest Post
+            </Link>
+          </li>
+          <li className={activeLink === '/archive' ? 'current' : ''}>
+            <Link href="/archive" onClick={() => changePage('/archive')}>
+              Archives
+            </Link>
+          </li>
+          <li className={activeLink === '/me' ? 'current' : ''}>
+            <Link href="/me" onClick={() => changePage('/me')}>
+              About Me
+            </Link>
+          </li>
+          <li className={activeLink === '/contact' ? 'current' : ''}>
+            <Link href="/contact" onClick={() => changePage('/contact')}>
+              Contact Me
+            </Link>
+          </li>
 				</ul>
 			</nav>
             {/* Search */}

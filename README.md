@@ -1,2 +1,2 @@
-[[portfolio
-](https://tinportfolio.vercel.app/)](https://tinportfolio.vercel.app/)https://tinportfolio.vercel.app/
+## Portfolio Link
+### https://tinportfolio.vercel.app

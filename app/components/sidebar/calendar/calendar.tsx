@@ -19,7 +19,7 @@ export const Calendar = () => {
 								</thead>
 								<tbody>
 									<tr>
-										<td colSpan="4" className="pad"><span>&nbsp;</span></td>
+										<td colSpan={4} className="pad"><span>&nbsp;</span></td>
 										<td><span>1</span></td>
 										<td><span>2</span></td>
 										<td><span>3</span></td>
@@ -56,7 +56,7 @@ export const Calendar = () => {
 										<td><span>26</span></td>
 										<td><span>27</span></td>
 										<td><span>28</span></td>
-										<td className="pad" colspan="3"><span>&nbsp;</span></td>
+										<td className="pad" colSpan={3}><span>&nbsp;</span></td>
 									</tr>
 								</tbody>
 							</table>

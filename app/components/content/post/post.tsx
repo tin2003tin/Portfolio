@@ -21,7 +21,7 @@ export const Post = ({ header = "", pic = "" }) => {
       </a>
         
         <p>
-            <strong>Hello!</strong> You're looking at <strong>Striped</strong>, a fully responsive HTML5 site template designed by <a href="http://twitter.com/ajlkn">AJ</a>
+            <strong>Hello!</strong> You&apos;re looking at <strong>Striped</strong>, a fully responsive HTML5 site template designed by <a href="http://twitter.com/ajlkn">AJ</a>
             for <a href="http://html5up.net">HTML5 UP</a> It features a clean, minimalistic design, styling for all basic page elements (including blockquotes, tables and lists), a
             repositionable sidebar (left or right), and HTML5/CSS3 code designed for quick and easy customization (see code comments for details).
         </p>

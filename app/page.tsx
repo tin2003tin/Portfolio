@@ -3,6 +3,17 @@ import { Post } from "@/components/content/post/post";
 import { collection, doc, getDocs } from "firebase/firestore";
 import { firestore } from "@/firebase/firebase";
 
+interface Archive {
+  name: string;
+  imageUrl: string;
+  title: string;
+  highlight: string;
+  detail: string;
+  tool: string;
+  webLink: string;
+  githubLink: string;
+}
+
 export default async function Home() {
   const querySnapshot = await getDocs(collection(firestore, "archive"));
   return (
@@ -11,7 +22,7 @@ export default async function Home() {
       {querySnapshot.docs.map(doc => (
         <Post 
           key={doc.id}
-          data={doc.data()}
+          data={doc.data() as Archive}
         />
       ))}
            {/* <Post 

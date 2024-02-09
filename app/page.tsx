@@ -1,21 +1,20 @@
 import { Pagination } from "@/components/content/pagination/pagination";
 import { Post } from "@/components/content/post/post";
+import { collection, doc, getDocs } from "firebase/firestore";
+import { firestore } from "@/firebase/firebase";
 
-export default function Home() {
+export default async function Home() {
+  const querySnapshot = await getDocs(collection(firestore, "archive"));
   return (
     <div id="content">
     <div className="inner">
-          <Post 
-            header={"Instagram Clone"} 
-            pic={"/instagram-clone/example1.png"}
-            title={""}
-            highlightWord = {"Fullstack Instagram Clone"}
-            detail={"Embarking on my programming journey, I'm thrilled to dive into the world of web development with my inaugural project, a captivating Instagram clone tutorial crafted by the talented developer at https://github.com/burakorkmez/instagram-clone. This immersive experience promises not only to hone my coding skills but also to unveil the intricate layers of building a sophisticated application, setting the stage for a transformative learning adventure. As I navigate through the intricacies of the tutorial, I eagerly anticipate uncovering the secrets behind crafting a seamless user interface, mastering state-of-the-art technologies, and gaining the prowess to customize this Instagram clone into a unique expression of my coding prowess. This project is not just a tutorial; it's a stepping stone toward becoming a proficient developer, equipped with the knowledge to create innovative and dynamic web applications."}
-            tool= {" Framework : Vite-React, Ui : Chakra, Component : Chakra, Authentication : Firebase, Database : Firebase, Storage : Firebase, Deploy : Vercel "}
-            webLink={"https://tin-my-tutorial-1.vercel.app"}
-            githubLink="https://github.com/tin2003tin/Project-instagram-clone"
-          ></Post>
-           <Post 
+      {querySnapshot.docs.map(doc => (
+        <Post 
+          key={doc.id}
+          data={doc.data()}
+        />
+      ))}
+           {/* <Post 
             header={"IMS Course"} 
             pic={"/lms-course/example1.png"}
             title={""}
@@ -24,9 +23,13 @@ export default function Home() {
             tool= {"Framework : Next.js 14, Ui : Lucide, Component : Shadcn, Authentication : Clerk, Database : Neon(postgresql)+ Prisma, Storage : Uploadthing, Video : Mux, Payment : Stripe, Deploy : Vercel "}
             webLink={"https://lms-course-tin2003tins-projects.vercel.app/"}
             githubLink="https://github.com/tin2003tin/Project-lms-course"
-          ></Post>
+          ></Post> */}
           <Pagination></Pagination>
       </div>
   </div>
   );
 }
+function State() {
+  throw new Error("Function not implemented.");
+}
+

@@ -28,14 +28,14 @@ export const SideBar = () => {
               Archives
             </Link>
           </li>
+          <li className={activeLink === '/course' ? 'current' : ''}>
+            <Link href="/course" onClick={() => changePage('/course')}>
+              Courses
+            </Link>
+          </li>
           <li className={activeLink === '/me' ? 'current' : ''}>
             <Link href="/me" onClick={() => changePage('/me')}>
               About Me
-            </Link>
-          </li>
-          <li className={activeLink === '/contact' ? 'current' : ''}>
-            <Link href="/contact" onClick={() => changePage('/contact')}>
-              Contact Me
             </Link>
           </li>
 				</ul>

@@ -1,18 +1,9 @@
 "use client"
 import Image from 'next/image';
+import { ArchiveType } from '@/types/archive';
 
-interface Archive {
-    name: string;
-    imageUrl: string;
-    title: string;
-    highlight: string;
-    detail: string;
-    tool: string;
-    webLink: string;
-    githubLink: string;
-  }
 
-export const Post = ({ data }: { data: Archive }) => {
+export const Post = ({ data }: { data: ArchiveType }) => {
     return (
         <article className="box post post-excerpt">
         <header>

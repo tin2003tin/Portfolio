@@ -2,17 +2,8 @@ import { Pagination } from "@/components/content/pagination/pagination";
 import { Post } from "@/components/content/post/post";
 import { collection, doc, getDocs } from "firebase/firestore";
 import { firestore } from "@/firebase/firebase";
+import { ArchiveType } from "@/types/archive";
 
-interface Archive {
-  name: string;
-  imageUrl: string;
-  title: string;
-  highlight: string;
-  detail: string;
-  tool: string;
-  webLink: string;
-  githubLink: string;
-}
 
 export default async function Home() {
   const querySnapshot = await getDocs(collection(firestore, "archive"));
@@ -22,7 +13,7 @@ export default async function Home() {
       {querySnapshot.docs.map(doc => (
         <Post 
           key={doc.id}
-          data={doc.data() as Archive}
+          data={doc.data() as ArchiveType}
         />
       ))}
            {/* <Post 

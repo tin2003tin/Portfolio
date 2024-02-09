@@ -4,6 +4,7 @@ import { ArchiveType } from '@/types/archive';
 
 
 export const Post = ({ data }: { data: ArchiveType }) => {
+    const test = "";
     return (
         <article className="box post post-excerpt">
         <header>

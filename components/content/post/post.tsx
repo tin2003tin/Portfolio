@@ -21,7 +21,7 @@ export const Post = ({ data }: { data: ArchiveType }) => {
         </div>
         <a href="#" className="image featured">
           <Image
-            src={data.imageUrl}
+            src={data.imageUrl ? data.imageUrl : "/emptyPic.jpg"}
             alt={data.name}
             width={2200}
             height={600}
@@ -32,13 +32,13 @@ export const Post = ({ data }: { data: ArchiveType }) => {
             <strong>{data.highlight}</strong> {data.detail}
         </p>
         <p>
-           <strong>Tools : </strong>  {data.tool}
+           <strong>Tools : </strong>  {data.tool ? data.tool : "Use My pure heart"}
         </p>
         <p>
-        <strong>Web link : </strong>  <a href={data.webLink}>{data.webLink}</a>
+        <strong>Web link : </strong>  <a href={data.webLink ? data.webLink : ""}>{data.webLink? data.webLink : "No Web Link"}</a>
         </p>
         <p>
-        <strong>Github link : </strong>  <a href={data.githubLink}>{data.githubLink}</a>
+        <strong>Github link : </strong>  <a href={data.githubLink ? data.githubLink : ""}>{data.githubLink ? data.githubLink : "No Github Link"}</a>
         </p>
         <hr></hr>
     </article>

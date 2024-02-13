@@ -2186,7 +2186,27 @@ input, select, textarea {
 			background-color: rgba(255, 255, 255, 0.1);
 			color: #fff;
 		}
-
+		.courses {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-gap: 20px;
+			
+		}
+		.course {
+			background-color: #f0f0f0;
+			padding: 10px;
+			border-radius: 10px;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			text-align: center;
+			line-height: 1.5;
+			transition: background-color 0.6s ease; /* Smooth transition effect */
+		}
+		.course:hover {
+			background-color: #e0e0e0; /* Change background color on hover */
+		}
+		.long-url {
+			
+		}
 /* Sidebar */
 
 	#titleBar {
@@ -2352,6 +2372,8 @@ input, select, textarea {
 			position: relative;
 			z-index: 1;
 		}
+		
+		
 
 /* Copyright */
 
